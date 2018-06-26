@@ -1,0 +1,73 @@
+
+html, body {
+	height: 100%;
+	overflow: hidden;
+	-webkit-app-region: drag
+}
+
+body{
+	color:#e0e0e0;
+	margin:0px;
+	padding:0px;
+	background-color:black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+img{
+	max-width: 100%;
+	height:auto;
+}
+
+body{ 
+	font-size:9pt;
+	font-family : verdana;
+}
+
+TD{font-size: 9pt; font-family : verdana}
+p{font-size: 9pt; font-family : Verdana}
+
+a:hover {
+	cursor:pointer;
+}
+
+b {color: #ffffff}
+
+.bright_hover{
+	cursor:pointer;
+	opacity: 0.2;
+}
+.bright_hover:hover{
+	opacity: 1.0;
+}
+
+#playarea_game {
+	background-color: #000;
+}
+#playarea_game:-webkit-full-screen {
+	cursor: none;
+}
+
+canvas {
+	display: block;
+	image-rendering: optimizeSpeed;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: optimize-contrast;
+	image-rendering: pixelated;
+	-ms-interpolation-mode: nearest-neighbor;
+
+	border: 0px;
+	width: 256px;
+	height: 256px;
+}
+
+#buttonsdiv {
+	display: none;
+	position: absolute;
+	right: 0;
+	width: 64px;
+	margin-top: -120px;
+	text-align: center;
+}

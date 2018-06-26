@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="player.css">
+	<script type="text/javascript" src="player.js"></script>
+</head>
+<body>
+	<div id="playarea_wrapper">
+		<div id="playarea_game">
+			<canvas id="module_canvas"></canvas>
+		</div>
+
+		<div id="buttonsdiv">
+			<div class="bright_hover" style="margin-bottom:4px;">
+				<a onclick="codo_running = !codo_running; if (codo_running) Module.resumeMainLoop(); else Module.pauseMainLoop(); set_pause_button();" title="Play/pause">
+					<div id="pause_button">
+						<img src="gfx/p8b_pause.png" width=24 height=24>
+					</div>
+				</a>
+			</div>
+
+			<a onclick="codo_volume = (codo_volume == 0) ? 256 : 0; codo_command = 2; codo_command_p = codo_volume; set_sound_button();" title="Toggle audio">
+				<div id="sound_button" class="bright_hover" style="margin-bottom:4px;">
+					<img src="gfx/p8b_sound1.png" width=24 height=24>
+				</div>
+			</a>
+
+			<div class="bright_hover" style="margin-bottom:4px;">
+				<a onclick="request_fullscreen();" title="Fullscreen">
+					<img src="gfx/p8b_full.png" width=24 height=24>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		/*
+		// How to use:
+		load_config({
+			engine: 'https://www.lexaloffle.com/bbs/pico8_0111g.js', // can be an url or file path
+			cartridge: 15133, // can be an url, a file path or an integer
+			fullscreen: false
+		})
+		*/
+	</script>
+</body>
+</html>
