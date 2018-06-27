@@ -17,6 +17,12 @@ function onKeyDown_blocker (event) {
 
   var o = document.activeElement
   if (!o || o === document.body || o.tagName === 'canvas') {
+    if (event.keyCode === 122) {
+      // allow F11 to toggle fullscreen
+      var isFullscreen = document.webkitIsFullScreen
+      if (isFullscreen) document.webkitCancelFullScreen()
+      else request_fullscreen()
+    }
     if (event.preventDefault) event.preventDefault()
   }
 }

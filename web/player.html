@@ -13,21 +13,21 @@
 
 		<div id="buttonsdiv">
 			<div class="bright_hover" style="margin-bottom:4px;">
-				<a onclick="codo_running = !codo_running; if (codo_running) Module.resumeMainLoop(); else Module.pauseMainLoop(); set_pause_button();" title="Play/pause">
+				<a onclick="codo_running = !codo_running; if (codo_running) Module.resumeMainLoop(); else Module.pauseMainLoop(); set_pause_button();">
 					<div id="pause_button">
 						<img src="gfx/p8b_pause.png" width=24 height=24>
 					</div>
 				</a>
 			</div>
 
-			<a onclick="codo_volume = (codo_volume == 0) ? 256 : 0; codo_command = 2; codo_command_p = codo_volume; set_sound_button();" title="Toggle audio">
+			<a onclick="codo_volume = (codo_volume == 0) ? 256 : 0; codo_command = 2; codo_command_p = codo_volume; set_sound_button();">
 				<div id="sound_button" class="bright_hover" style="margin-bottom:4px;">
 					<img src="gfx/p8b_sound1.png" width=24 height=24>
 				</div>
 			</a>
 
 			<div class="bright_hover" style="margin-bottom:4px;">
-				<a onclick="request_fullscreen();" title="Fullscreen">
+				<a onclick="request_fullscreen();">
 					<img src="gfx/p8b_full.png" width=24 height=24>
 				</a>
 			</div>
