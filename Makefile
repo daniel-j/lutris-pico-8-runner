@@ -1,5 +1,5 @@
 
-version = 0.0.1
+version = 0.1.0
 
 .PHONY: build release default
 
@@ -9,6 +9,7 @@ build:
 	rm -rf build
 	mkdir -p build/pico8
 	cp -r web build/pico8/
+	cp web.py build/pico8/
 	echo "$(version)" > build/pico8/version
 
 release: build
