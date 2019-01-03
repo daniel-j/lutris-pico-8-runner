@@ -134,7 +134,7 @@ document.addEventListener("visibilitychange", function() {
   if (document.visibilityState === 'hidden') {
     Module.pauseMainLoop()
   } else {
-    if (codo_running) Module.resumeMainLoop()
+    if (codo_running && Module.resumeMainLoop) Module.resumeMainLoop()
   }
 })
 
