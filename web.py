@@ -15,8 +15,8 @@ from gi.repository import Gtk, GLib, Gdk, WebKit2
 class WebWindow(Gtk.Window):
     """Login form for external services"""
 
-    def __init__(self, uri, title="", icon=None, window_size='800x600', resizable=True, fullscreen=False, frameless=False, maximized=False, stylesheet_content="", script_content="", debug=False, external_links=False, parent=None):
-        super(WebWindow, self).__init__(title=title, parent=parent)
+    def __init__(self, uri, icon=None, window_size='800x600', resizable=True, fullscreen=False, frameless=False, maximized=False, stylesheet_content="", script_content="", debug=False, external_links=False, parent=None):
+        super(WebWindow, self).__init__(parent=parent)
         self.is_fullscreen = False
         self.initial_uri = uri
         self.script_content = script_content
@@ -148,7 +148,7 @@ class WebWindow(Gtk.Window):
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('--name', default="Web Runner")
+    parser.add_argument('--name')
     parser.add_argument('--icon')
     parser.add_argument('--window-size', default='800x600')
     parser.add_argument('--disable-resizing', action='store_true')
@@ -191,8 +191,10 @@ if __name__ == "__main__":
     if os.path.isfile(uri):
         uri = 'file://' + uri
 
+    # name is given by Gtk it seems like
+
     web = WebWindow(
-        uri=uri, title=args.name, icon=args.icon, window_size=args.window_size,
+        uri=uri, icon=args.icon, window_size=args.window_size,
         resizable=not args.disable_resizing, fullscreen=args.fullscreen,
         frameless=args.frameless, maximized=args.maximize_window, debug=args.devtools,
         script_content=execjs, stylesheet_content=args.injectcss, external_links=args.open_links
